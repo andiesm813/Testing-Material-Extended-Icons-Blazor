@@ -1,0 +1,35 @@
+.row-layout {
+    display: flex;
+}
+.page-1-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    height: 100%;
+}
+.group {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    gap: 16px;
+    position: relative;
+    padding: 16px;
+    min-width: 50px;
+    min-height: 50px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.icon {
+    --size: 24px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+.button {
+    --ig-size: var(--ig-size-medium);
+    height: max-content;
+    flex-shrink: 0;
+}
+.button::part(base) {
+    background-color: var(--ig-secondary-100);
+}

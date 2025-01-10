@@ -1,0 +1,17 @@
+.row-layout {
+    display: flex;
+}
+.page-2-container {
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    height: 100%;
+}
+.h1 {
+    text-align: center;
+    height: max-content;
+    min-width: min-content;
+    align-self: center;
+    flex-grow: 1;
+    flex-basis: 0;
+}

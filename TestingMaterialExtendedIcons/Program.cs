@@ -19,6 +19,7 @@ void RegisterIgniteUI(IServiceCollection services)
         typeof(IgbIconButtonModule),
         typeof(IgbRippleModule),
         typeof(IgbNavDrawerModule),
+        typeof(IgbNavDrawerItemModule),
         typeof(IgbButtonModule)
     );
 }
