@@ -12,7 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Pages/Master_View.razor.css" CssScope="master_view-scope" />
+    <None Update="Shared/MainLayout.razor.css" CssScope="master_view-scope" />
+    <None Update="Pages/Page_1.razor.css" CssScope="page_1-scope" />
+    <None Update="Pages/Page_2.razor.css" CssScope="page_2-scope" />
+    <None Update="Pages/Page_3.razor.css" CssScope="page_3-scope" />
   </ItemGroup>
 
 </Project>

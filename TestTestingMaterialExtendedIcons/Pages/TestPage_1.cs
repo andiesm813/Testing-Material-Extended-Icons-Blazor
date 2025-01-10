@@ -5,7 +5,7 @@ using TestingMaterialExtendedIcons.Pages;
 namespace TestTestingMaterialExtendedIcons
 {
 	[Collection("TestingMaterialExtendedIcons")]
-	public class TestMaster_View
+	public class TestPage_1
 	{
 		[Fact]
 		public void ViewIsCreated()
@@ -13,12 +13,10 @@ namespace TestTestingMaterialExtendedIcons
 			using var ctx = new TestContext();
 			ctx.JSInterop.Mode = JSRuntimeMode.Loose;
 			ctx.Services.AddIgniteUIBlazor(
-				typeof(IgbNavbarModule),
 				typeof(IgbIconButtonModule),
 				typeof(IgbRippleModule),
-				typeof(IgbNavDrawerModule),
 				typeof(IgbButtonModule));
-			var componentUnderTest = ctx.RenderComponent<Master_View>();
+			var componentUnderTest = ctx.RenderComponent<Page_1>();
 			Assert.NotNull(componentUnderTest);
 		}
 	}

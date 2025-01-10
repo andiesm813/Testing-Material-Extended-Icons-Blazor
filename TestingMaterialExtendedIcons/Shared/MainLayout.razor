@@ -1,5 +1,135 @@
 @inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
-<div class="master-view-container">
-    @Body
+<div class="column-layout master-view-container">
+    <IgbNavbar class="navbar" master_view-scope>
+        <IgbIconButton slot="start" Variant="IconButtonVariant.Flat" @onclick="@(e => _navDrawer!.ToggleAsync())">
+            <span class="material-icons">
+                menu
+            </span>
+            <IgbRipple></IgbRipple>
+        </IgbIconButton>
+        <div class="row-layout group">
+            <h6 class="h6">
+                Testing Material Extended Icons
+            </h6>
+        </div>
+        <IgbIconButton slot="end" Variant="IconButtonVariant.Flat">
+            <span class="material-icons">
+                search
+            </span>
+            <IgbRipple></IgbRipple>
+        </IgbIconButton>
+        <IgbIconButton slot="end" Variant="IconButtonVariant.Flat">
+            <span class="material-icons">
+                favorite
+            </span>
+            <IgbRipple></IgbRipple>
+        </IgbIconButton>
+        <IgbIconButton slot="end" Variant="IconButtonVariant.Flat">
+            <span class="material-icons">
+                more_vert
+            </span>
+            <IgbRipple></IgbRipple>
+        </IgbIconButton>
+    </IgbNavbar>
+    <div class="row-layout group_1">
+        <IgbNavDrawer Open="true" Position="NavDrawerPosition.Relative" @ref="_navDrawer" class="nav-drawer" master_view-scope>
+            <IgbNavDrawerHeaderItem>
+                <div>Header</div>
+            </IgbNavDrawerHeaderItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("/page_1"))">
+                <span slot="icon">
+                    <span class="imx-icon imx-usa-party-democratic icon"></span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Material Ext Icon</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("/page_2"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        dashboard
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Nav Item 2</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem @onclick="@(e => Navigate("/page_3"))">
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        home
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Nav Item 3</div>
+            </IgbNavDrawerItem>
+        </IgbNavDrawer>
+        <div class="view-container">
+            @Body
+        </div>
+        <IgbNavDrawer Position="NavDrawerPosition.Relative" class="nav-drawer" master_view-scope>
+            <div slot="mini">
+                <IgbNavDrawerItem>
+                    <span slot="icon">
+                        <span class="material-icons icon">
+                            account_circle
+                        </span>
+                        <IgbRipple></IgbRipple>
+                    </span>
+                </IgbNavDrawerItem>
+                <IgbNavDrawerItem>
+                    <span slot="icon">
+                        <span class="material-icons icon">
+                            dashboard
+                        </span>
+                        <IgbRipple></IgbRipple>
+                    </span>
+                </IgbNavDrawerItem>
+                <IgbNavDrawerItem>
+                    <span slot="icon">
+                        <span class="material-icons icon">
+                            home
+                        </span>
+                        <IgbRipple></IgbRipple>
+                    </span>
+                </IgbNavDrawerItem>
+            </div>
+            <IgbNavDrawerItem>
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        account_circle
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Nav Item 1</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem>
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        dashboard
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Nav Item 2</div>
+            </IgbNavDrawerItem>
+            <IgbNavDrawerItem>
+                <span slot="icon">
+                    <span class="material-icons icon">
+                        home
+                    </span>
+                    <IgbRipple></IgbRipple>
+                </span>
+                <div slot="content">Nav Item 3</div>
+            </IgbNavDrawerItem>
+        </IgbNavDrawer>
+    </div>
 </div>
+
+@code {
+    private IgbNavDrawer _navDrawer;
+
+    public void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}
